@@ -311,6 +311,14 @@ $md-linear-channel-values:
   $bgLum: md-check-luminance($bg) + .2;
   $fgLum: md-check-luminance($fg) + .2;
 
+  @if $bgLum == 0 {
+    $bgLum: 0.0001;
+  }
+
+  @if $fgLum == 0 {
+    $fgLum: 0.0001;
+  }
+
   @return max($bgLum, $fgLum) / min($bgLum, $fgLum);
 }
 
